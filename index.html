@@ -2,39 +2,66 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Resume Builder</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0>">
+    <link rel="stylesheet" href="style.css">
+    <title>Resume Builder</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Resume Builder</h1>
-        <div>
-            <h2>Personal Information</h2>
-            <label for="profilePic">Profile Picture: </label>
-            <input type="file" id="profilePic" accept="image/*"><br>
-            <img id="pfpPreview" class="profile-pic" alt="Profile Picture Preview" style="display: none;">
-            <label for="name">Name: </label><input type="text" id="name"><br>
-            <label for="email">Email: </label><input type="email" id="email"><br>
-            <label for="phone">Phone: </label><input type="text" id="phone"><br>
-            <label for="address">Address: </label><input type="text" id="address"><br>
-        </div>
-        <div>
-            <h2>Education</h2>
-            <textarea id="education" rows="3" placeholder="Enter your education details"></textarea><br>
-        </div>
-        <div>
-            <h2>Work Experience</h2>
-            <textarea id="experience" rows="3" placeholder="Enter your work experience"></textarea><br>
-        </div>
-        <div>
-            <h2>Skills</h2>
-            <textarea id="skills" rows="3" placeholder="Enter your skills"></textarea><br>
-        </div>
-        <button id="generate">Generate Resume</button>
-        <h2>Resume Output</h2>
-        <pre id="output"></pre>
-    </div>
-    <script src="script.js"></script>
+    <form id="resumeForm">
+        <fieldset>
+            <legend>Username</legend>
+            <input type="text" id="username" placeholder="Enter your name" required> <br> <br>
+
+            <legend>Personal Information</legend><br>
+
+            <label for="photo">Upload Photo</label>
+            <input type="file" id="photo" name="Photo" required><br><br>
+
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="Enter your full name" required><br><br>
+
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="Email" required><br><br>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="Phone number" required><br><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Education</legend>
+            <label for="degree">Degree:</label>
+            <input type="text" id="degree" name="degree" required><br><br>
+
+            <label for="school">School:</label>
+            <input type="text" id="school" name="school" required><br><br>
+
+            <label for="year">Year of Graduation:</label>
+            <input type="text" id="year" name="year" required><br><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Skills</legend>
+            <label for="skills">List Your Skills:</label>
+            <textarea id="skills" name="skills" rows="4" required placeholder="e.g., HTML, CSS, JavaScript, TypeScript, React"></textarea><br><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Work Experience</legend>
+            <label for="company">Company:</label>
+            <input type="text" id="company" name="company" required><br><br>
+
+            <label for="role">Role:</label>
+            <input type="text" id="role" name="role" required><br><br>
+
+            <label for="years">Years of Experience:</label>
+            <input type="text" id="years" name="years" required><br><br>
+
+            <label for="responsibilities">Key Responsibilities:</label>
+            <textarea id="responsibilities" name="responsibilities" rows="4" required placeholder="e.g., Web Development, Frontend Design, Project Management"></textarea><br><br>
+        </fieldset>
+
+        <button type="submit">Submit</button>
+        <script src="script.js"></script>
+    </form>
 </body>
 </html>
